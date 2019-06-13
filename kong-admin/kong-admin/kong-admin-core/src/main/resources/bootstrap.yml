@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ar-kong-admin
+    index: 0
+  cloud:
+    config:
+      #name: "${spring.application.name}"
+      profile: rdev
+      failFast: false
+      label: master
+      discovery:
+        serviceId: config-server
+        enabled: true
+
+logging:
+  config: classpath:logback-spring.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "${EUREKA_URL:http://10.100.11.217:21111/eureka}"

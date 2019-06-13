@@ -1,0 +1,163 @@
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    width: 8px;
+    display: block;
+    background-color: rgba(193, 193, 193, .6);
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(241, 241, 241);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix{
+	&:before, &:after{
+		display: table;
+		content: "",
+	}
+
+	&:after{
+		clear: both;
+	}
+}
+
+.manager{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-width: 1200px;
+
+	.wrapper{
+		position: relative;
+		height: 100%;
+
+		.el-header{
+		    background-color: #fdfdfd;
+		    color: #333;
+		    line-height: 60px;
+		    border-bottom: 1px solid #e6e6e6;
+		    border-left: 1px solid #e6e6e6;
+		    // box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+		}
+
+		.wrapper-container{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.wrapper-aside{
+			background-color: #fdfdfd;
+			// border-right: 1px solid #e6e6e6;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2)
+		}
+
+		.el-menu-vertical{
+			border-right: none;
+		}
+	}	
+
+	.plus{
+		float: right;
+		margin: 15px 20px;
+	}
+
+	.page{
+		float: right;
+		margin: 15px 0;
+	}
+
+	.form-card{
+		margin: 20px 0;
+
+		.form{
+			width: 560px;
+
+			&-lg{
+				width: 640px;
+			}
+
+			&.lg{
+				width: 750px;
+
+				.el-radio.is-bordered{
+					margin-top: 10px;
+
+					&:nth-child(3n+1){
+						margin-left: 0;
+					}					
+				}
+			}
+		}
+
+		.select{
+			width: 420px;
+
+			&-sm{
+				width: 400px;
+			}
+		}
+
+		.text{
+			position: absolute;
+			left: 100%;
+			top: 0;
+			margin-left: 10px;
+			width: 700px;
+			font-size: 12px;
+			color: #ccc;
+
+			&.lhmt{
+				line-height: 1.2; 
+				margin-top: 3px;
+			}
+		}
+	}
+
+	.edit{
+		float: left;
+		margin: 15px 20px;
+	}
+
+	.child-info{
+		margin-bottom: 10px;
+		
+		& > span{
+			float: left;
+			width: 80px;
+		}		
+
+		.el-input{
+			margin-left: 10px;
+			width: 70%;			
+		}
+
+		.el-checkbox{
+			margin-left: 10px;
+		}
+
+		.el-input-number{
+			.el-input{
+				width: 93%;
+			}
+
+			span[role='button']{
+				width: 32px;
+			}
+		}
+	}
+
+	.primary-row{
+		background-color: #f0f9eb;
+	}
+}

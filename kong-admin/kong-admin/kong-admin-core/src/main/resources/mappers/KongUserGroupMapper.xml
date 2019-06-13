@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tuandai.ms.ar.dao.KongUserGroupMapper">
+  <resultMap id="BaseResultMap" type="com.tuandai.ms.ar.model.user.KongUserGroup">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="kong_group" jdbcType="VARCHAR" property="kongGroup" />
+    <result column="bing_kong_server" jdbcType="VARCHAR" property="bingKongServer" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, kong_group, bing_kong_server
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kong_user_group
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <insert id="insert" parameterType="com.tuandai.ms.ar.model.user.KongUserGroup">
+    insert into kong_user_group (id, user_id, kong_group,bing_kong_server
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{kongGroup,jdbcType=VARCHAR}, #{bingKongServer,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <!--查询用户组-->
+  <select id = "selectUserGroupList" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from kong_user_group
+    where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+
+  <!-- 根据用户名和组名称查询 -->
+  <select id="selectByUserAndGroupName" resultMap="BaseResultMap">
+    select
+        <include refid="Base_Column_List" />
+    from kong_user_group
+    where user_id = #{userId,jdbcType=BIGINT} and kong_group = #{groupName,jdbcType=VARCHAR}
+  </select>
+
+  <!-- 绑定服务 -->
+  <update id="bindServer" parameterType="com.tuandai.ms.ar.dto.req.BindServerReq">
+    update kong_user_group
+    SET bing_kong_server = #{server,jdbcType = VARCHAR}
+    WHERE user_id = #{userId,jdbcType=BIGINT} and kong_group = #{groupName,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 批量插入 -->
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into kong_user_group (user_id, kong_group,bing_kong_server)
+    values
+    <foreach collection="list" separator="," index="0" item="group" >
+      (#{group.userId,jdbcType=BIGINT}, #{group.kongGroup,jdbcType=VARCHAR}, #{group.bingKongServer,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+
+  <!-- 删除用户所有组 -->
+  <delete id="deleteGroupUser">
+      delete from kong_user_group where user_id = #{userId} and  kong_group = #{groupName,jdbcType=VARCHAR}
+  </delete>
+
+  <!-- 删除用户组 -->
+  <delete id = "deleteAllGroup">
+    delete from kong_user_group where user_id = #{userId}
+    and kong_group in
+    <foreach collection="groupList" item="group" open="(" separator="," index="0" close=")">
+          #{group.kongGroup}
+    </foreach>
+  </delete>
+</mapper>

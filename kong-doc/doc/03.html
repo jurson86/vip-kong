@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>03</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>TGW  实战</h1>
+<h2>简介</h2>
+<h4>什么是KGW</h4>
+<p><strong>网关原始定义</strong>： <br />
+网关的英文名称：gateway，又叫做网间连接器、协议转换器。
+网关是在采用不同体系结构或协议的网络之间进行互通时，用于提供协议转换、路由选择等网络兼容功能的设施。</p>
+<p><strong>基础功能：</strong>  协议转换，路由选择，网络转换；</p>
+<p>随着业务的发展，尤其是微服务的出现，应用层面的网关随之出现，整合业务层面的基础功能。</p>
+<p>例如:</p>
+<ol>
+<li><strong>统一接入：</strong>网关对外包括ios、android、webapp、website、h5、微信小程序甚至是第三方提供一个统一服务接入入口。</li>
+<li><strong>服务编排:</strong>  客户端通过网关统一开放的接口，来提供各类业务的服务；</li>
+<li><strong>安全策略：</strong>   保护后端服务，提供流量控制、服务降级、访问控制（ACL）、鉴权机制，攻击识别等。</li>
+<li><strong>API管理平台：</strong> API的配置、灰度测试、发布、修改、下线。</li>
+<li><strong>安全防护（WAF）:</strong>  API审计，通过API层面的监控，数据分析采取主被动防御，从而做到对访问内容安全识别的支撑。</li>
+</ol>
+<p><strong>KGW主要包含服务</strong>：    </p>
+<pre>
+Register Eureka : 微服务注册中心；
+Register Redis : kong集群注册中心；不同业务主体，可注册为不同的kong服务集群。
+PostgreSQL   ：kong集群配置中心，用来存储配置基础数据。     
+Kong Service ：基于nginx的服务器，用来处理API请求。    
+Kong Admin ：ADMIN控制台，使用 restfull 方式管理kong集群; 整合微服务注册中心Eureka 到kong集群；
+Kong Authservice ： 身份认证，权限管理插件用到的支撑服务。
+</pre>
+<p><strong>组件之间的关系</strong>：     </p>
+<pre>
+Kong Admin  与 Register  Eureka  ，  Register Redis 同组一一匹配的关系；     
+
+Kong Service 与 PostgreSQL 同集群一一匹配的关系
+
+Kong Admin组 与 Kong Service集群为 一对多的关系；
+
+插件支撑服务与插件接口由插件配置定义匹配关系，如： Kong Authservice 
+</pre>
+<p><img src="03_images\033.png" alt="033" /></p>
+<h4>为什么要用KGW</h4>
+<p>Kong是一个著名的API网关轮子，直接在Kong的基础上来构建自己的API 网关系统</p>
+<p>原始架构方案：</p>
+<p><img src="03_images\034.png" alt="034" /></p>
+<p>接入网关架构：</p>
+<p><img src="03_images\035.png" alt="035" /></p>
+<p>Kong采用插件机制进行功能定制，插件集（可以是0或N个）在API请求响应循环的生命周期中被执行。采用插件方式实现网关特性，能非常灵活的整合其基础功能。</p>
+<p>插件使用Lua编写，Lua脚本性语言，非常利于配置变更及解读。</p>
+<p>目前已有基础插件：API自定义秘钥双向加解密， 身份认证、基于角色的权限管理、链路跟踪监控、停服维护、客户端限流、黑白名单等。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
